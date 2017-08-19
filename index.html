@@ -13,11 +13,14 @@
     <!-- Add a babel script within the body of the HTML file -->
     <!-- Start rendering elements using ReactJS  -->
     <script type="text/babel">
-      let element = <div>Hello World</div>;
-      ReactDOM.render(
-        element,
-        document.getElementById("root")
-      )
+      let num = 0;
+      function updateNum() {
+        ReactDOM.render(
+          <div>Hello World {num++}</div>,
+          document.getElementById("root")
+        )
+      }
+      setInterval(updateNum,1000)
     </script>
   </body>
 </html>
