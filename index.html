@@ -13,11 +13,11 @@
     <!-- Add a babel script within the body of the HTML file -->
     <!-- Start rendering elements using ReactJS  -->
     <script type="text/babel">
-      function Hello() {
-        return <div>Hello World</div>
+      function Hello(props) {
+        return <h1>Hello {props.name}</h1>
       }
       ReactDOM.render(
-        <Hello />,
+        <Hello name = "World" />,
         document.getElementById("root")
       )
     </script>
