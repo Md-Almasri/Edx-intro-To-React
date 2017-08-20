@@ -16,10 +16,12 @@
     <!-- <script type="text/babel" src="index.js"></script> -->
     <script type="text/babel">
       function Hello(props) {
-        return <h1>Hello {props.name}</h1>
+        return (
+          props.active && <h1>Hello {props.name}</h1>
+        )
       }
       ReactDOM.render(
-        <Hello name = "World" />,
+        <Hello active = {true} name = "World" />,
         document.getElementById("root")
       )
     </script>
