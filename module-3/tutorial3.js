@@ -57,7 +57,7 @@ class App extends React.Component {
 		itemsCopy.splice(index, 1);
 		this.setState({items: itemsCopy})
 	}
-	updateScore(index, value) {
+	updateScore = (index, value) => {
 		let itemsCopy = this.state.items.slice();
 		itemsCopy[index].score += value;
 		this.setState({items: itemsCopy})
@@ -70,7 +70,7 @@ class App extends React.Component {
 				<PostList 
 					postList={this.state.items}
 					removeItem={this.removeItem}
-					updateScore={this.updateScore.bind(this)}
+					updateScore={this.updateScore}
 				/>
 			</div>
 		)
