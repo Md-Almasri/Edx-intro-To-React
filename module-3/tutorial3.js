@@ -9,7 +9,7 @@ const PostButton = (props) => {
 const PostText = (props) => {
 	let style = {
 		border: "solid grey 1px",
-		width: 200
+		width: props.width
 	}
 	return <div style={style}>{props.text}</div>
 }
@@ -21,9 +21,9 @@ const Post = (props) => {
 	return (
 		<div style={style}>
 			<PostButton label="x" handleClick={props.removeItem} />
-			<PostText text={props.text} />
+			<PostText width={200} text={props.text} />
 			<PostButton label="-" handleClick={props.decrementScore} />
-			<PostText text={props.score} />
+			<PostText width="25" text={props.score} />
 			<PostButton label="+" handleClick={props.incrementScore} />
 		</div>
 	)
