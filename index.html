@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./module-1/lab.css">
-    <!-- Add scripts to include react.js, react-dom.js and babel.js -->
-    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
-    <title>Intro to react</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- Add a babel script within the body of the HTML file -->
-    <!-- Start rendering elements using ReactJS ReactDOM.render -->
-    <!-- add external js file  -->
-    <!-- <script type="text/babel" src="index.js"></script> -->
-    <script type="text/babel">
-      function Hello(props) {
-        return (
-          props.active && <h1>Hello {props.name}</h1>
-        )
-      }
-      ReactDOM.render(
-        <Hello active = {true} name = "World" />,
-        document.getElementById("root")
-      )
-    </script>
-    <hr>
-    <div id="lab"></div>
-    <script type="text/babel" src="./module-1/lab.js"></script>
-    <hr>
-    <a href="./module-2/module2.html">Module 2 - Class components</a>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./module-1/lab.css">
+		<!-- Add scripts to include react.js, react-dom.js and babel.js -->
+		<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+		<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+		<title>Intro to react</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<!-- Add a babel script within the body of the HTML file -->
+		<!-- Start rendering elements using ReactJS ReactDOM.render -->
+		<!-- add external js file  -->
+		<!-- <script type="text/babel" src="index.js"></script> -->
+		<!-- or -->
+		<script type="text/babel">
+			function Hello(props) {
+				return (
+					props.active && <h1>Hello {props.name}</h1>
+				)
+			}
+			ReactDOM.render(
+				<Hello active = {true} name = "World" />,
+				document.getElementById("root")
+			)
+		</script>
+		<hr>
+		<a href="#module1">Module 1 - Class components</a>
+		<a href="#module2">Module 2 - Class components</a>
+		<a href="#module3">Module 3 - Lists and Forms</a>
+		<!-- <a href="#module3">Module 3 - Class components</a> -->
+		<div id="lab"></div>
+		<script type="text/babel" src="./module-1/lab.js"></script>
+		<hr>
+		<div id="module2">
+			<h1>Module 2 - Class Components</h1>
+			<p>Module 2 is about class components, state, life cycle methods, and event handlers.</p>
+			<div id="createClassComponent"></div>
+			<script type="text/babel" src="./module-2/createClassComponent.js"></script>
+		</div>
+		<hr>
+		<div id="module3">
+			<h1>Module 3 - Lists and Forms</h1>
+			<h2>tutorial 3</h2>
+			<div id="tutorial3"></div>
+			<script type="text/babel" src="./module-3/tutorial3.js"></script>
+		</div>
+	</body>
 </html>
+
