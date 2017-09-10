@@ -11,9 +11,9 @@ function Post(props) {
 		<div>
 			<PostButton label="x" handleClick={props.removeItem} />
 			<PostText text={props.text} />
-			<PostButton label="-" />
+			<PostButton label="-" handleClick={props.decrementScore} />
 			<PostText text={props.score} />
-			<PostButton label="+" />
+			<PostButton label="+" handleClick={props.incrementScore} />
 		</div>
 	)
 }
@@ -27,6 +27,8 @@ function PostList(props) {
 					text={item.item}
 					score={item.score}
 					removeItem={() => props.removeItem(index)}
+					incrementScore={() => props.updateScore(index, 1)}
+					decrementScore={() => props.updateScore(index, -1)}
 				/>
 			)
 		}
@@ -52,8 +54,12 @@ class App extends React.Component {
 	// By using arrow function, we do not need to bind this for removeItem
 	removeItem = (index) => {
 		let itemsCopy = this.state.items.slice();
-		console.log(index);
 		itemsCopy.splice(index, 1);
+		this.setState({items: itemsCopy})
+	}
+	updateScore(index, value) {
+		let itemsCopy = this.state.items.slice();
+		itemsCopy[index].score += value;
 		this.setState({items: itemsCopy})
 	}
 	render() {
@@ -64,6 +70,7 @@ class App extends React.Component {
 				<PostList 
 					postList={this.state.items}
 					removeItem={this.removeItem}
+					updateScore={this.updateScore.bind(this)}
 				/>
 			</div>
 		)
