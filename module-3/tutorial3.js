@@ -1,14 +1,25 @@
 const PostButton = (props) => {
-	return <button onClick={props.handleClick}>{props.label}</button>
+	let style = {
+		width: "25px",
+		height: "25px"
+	}
+	return <button style={style} onClick={props.handleClick}>{props.label}</button>
 }
 
 const PostText = (props) => {
-	return <div>{props.text}</div>
+	let style = {
+		border: "solid grey 1px",
+		width: 200
+	}
+	return <div style={style}>{props.text}</div>
 }
 
 const Post = (props) => {
+	let style = {
+		display:"flex"
+	}
 	return (
-		<div>
+		<div style={style}>
 			<PostButton label="x" handleClick={props.removeItem} />
 			<PostText text={props.text} />
 			<PostButton label="-" handleClick={props.decrementScore} />
