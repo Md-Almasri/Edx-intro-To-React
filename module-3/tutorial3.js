@@ -1,12 +1,12 @@
-function PostButton(props) {
+const PostButton = (props) => {
 	return <button onClick={props.handleClick}>{props.label}</button>
 }
 
-function PostText(props) {
+const PostText = (props) => {
 	return <div>{props.text}</div>
 }
 
-function Post(props) {
+const Post = (props) => {
 	return (
 		<div>
 			<PostButton label="x" handleClick={props.removeItem} />
@@ -18,7 +18,7 @@ function Post(props) {
 	)
 }
 
-function PostList(props) {
+const PostList = (props) => {
 	return (
 		<ol>
 		{
